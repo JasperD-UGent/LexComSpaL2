@@ -3,7 +3,7 @@
 This repository includes the LexComSpaL2 (**Lex**ical **Com**plexity for **Spa**nish **L2**) corpus, which can be employed to train personalised word-level difficulty classifiers for learners of Spanish as a foreign/second language (L2). The dataset contains 2,240 in-context target words with the corresponding difficulty judgements of 26 L2 learners of Spanish, resulting in a total of 58,240 annotations. The target words are divided over 200 sentences from four different domains (economics, health, law, and migration), which have been selected based on their suitability to be included in L2 learning materials. As the annotation scheme, a customised version of the five-point lexical complexity prediction scale (Shardlow et al., 2020) is used, tailored to the vocabulary knowledge continuum (which ranges from no knowledge over receptive mastery to productive mastery; Schmitt, 2019). The LexComSpaL2 corpus aims to address the lack of relevant data for multi-category difficult prediction at word level for L2 learners of other languages than English. Full details on the data collection, data labelling and dataset statistics can be found in Degraeuwe and Goethals (2024). The corpus consists of four files, whose contents are described in detail below.
 
 ## Main corpus file
-The `LexComSpaL2_all.tsv` file links the in-context target words to their annotations (i.e. the difficulty judgements from the 26 L2 Spanish learners). The file follows the same format as the [CompLex corpus](https://github.com/MMU-TDMLab/CompLex), the first extensive dataset for lexical complexity prediction (Shardlow et al., 2020). The only difference is that one extra column is added in which the individual annotations are provided. Below, a brief explanation of each column in the TSV file is given:
+The `LexComSpaL2_all.tsv` file links the in-context target words to their annotations (i.e. the difficulty judgements from the 26 L2 Spanish learners). The file follows the same format as the [CompLex corpus](https://github.com/MMU-TDMLab/CompLex), the first extensive dataset for lexical complexity prediction (LCP; Shardlow et al., 2020). The only difference is that one extra column is added in which the individual annotations are provided. Below, a brief explanation of each column in the TSV file is given:
 
 - `id`: ID of the corpus instance, consisting of three parts (each separated by an underscore). The first part corresponds to the ID of the corpus (see Degraeuwe & Goethals, 2024); the second part is the sentence ID; the third and last part corresponds to the index of the target word in the sentence.
 - `corpus`: topic area of the corpus.
@@ -40,10 +40,35 @@ Finally, the corpus also comes with a fixed dataset split into ten different ran
 |   9   | 160 \| 1,775 \| 46,150 | 20 \| 246 \| 6,396 | 20 \| 219 \| 5,694 |
 |  10   | 160 \| 1,766 \| 45,916 | 20 \| 228 \| 5,928 | 20 \| 246 \| 6,396 |
 
+## Enriched dataset versions
+
+### Word families
+
+This repository also includes the "word family-enriched" version of the LexComSpaL2 corpus, presented in Degraeuwe (2025). To enrich the original LexComSpaL2 dataset with word family information, the following three word family levels were considered: the word's **token** form (e.g., *desaparecido* - 'disappeared'), the word's **lemma** (*desaparecer* ['to disappear'], including all its inflected forms), and the **source** the word's lemma is derived from (i.e. the "parent" of the lemma in the "family tree"; *aparecer* ['to appear'], including all its inflected forms). Next, the following procedure was applied to every target word in the LexComSpaL2 dataset:
+
+1. Check if the exact token of the target word occurs more than once in the corpus. If so, first it is calculated if there is a statistically significant difference between the annotations and then, for all participants individually, the lowest and highest annotated value (on the 1-5 LCP scale) for the token in question are gathered.
+2. Check if the lemma of the target word occurs more than once in the corpus. If so, the process described in the first step is repeated, but in this case for the target word's lemma.
+3. Check if the source lemma of the target word's lemma occurs more than once in the corpus. If so, the process described in the first step is repeated for the source lemma. If the target word's lemma is a word family headword, this step is skipped.
+
+We added the data to the original LexComSpaL2 corpus by creating three new versions of the corpus, one per word family level:
+
+1. `LexComSpaL2_all_enriched_wordFamily_token.tsv`: for "token" as the word family level.
+2. `LexComSpaL2_all_enriched_wordFamily_lemma.tsv`: for "lemma" as the word family level.
+3. `LexComSpaL2_all_enriched_wordFamily_source.tsv`: for "source" as the word family level.
+
+In each of the files, four extra columns were added compared to the original LexComSpaL2 corpus:
+
+- A column called `multiple_occurrences_[LEVEL]` (where "[LEVEL]" has to be replaced by the name of the word family level of the file), which indicates if the target word occurs multiple times: `True` or `False` as possible values.
+- A column called `stat_sign_[LEVEL]`, which indicates if the annotations for the different occurrences of the target word show a statistically significant difference: `True`, `False`, or `N/A` (if the target word only occured once) as possible values.
+- A column called `min_annot_[LEVEL]`, which includes - in the format of a Python dictionary - the lowest LCP annotation for the target word per participant (or `N/A` in case the target word has only one occurrence).
+- A column called `max_annot_[LEVEL]`, which includes - in the format of a Python dictionary - the highest LCP annotation for the target word per participant (or `N/A` in case the target word has only one occurrence).
+
 ## DOI
-[https://doi.org/10.5281/zenodo.13920230](https://doi.org/10.5281/zenodo.13920229)
+https://doi.org/10.5281/zenodo.13920230
 
 ## References
+- Degraeuwe, J. (2025). You Shall Know a Word's Difficulty by the Family It Keeps: Word Family Features in Personalised Word Difficulty Classifiers for L2 Spanish.
+
 - Degraeuwe, J., & Goethals, P. (2024). LexComSpaL2: A Lexical Complexity Corpus for Spanish as a Foreign Language. In N. Calzolari, M.-Y. Kan, V. Hoste, A. Lenci, S. Sakti, & N. Xue (Eds.), *Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)* (pp. 10432–10447). Torino, Italy: ELRA and ICCL. https://aclanthology.org/2024.lrec-main.912/
 
 - Schmitt, N. (2019). Understanding vocabulary acquisition, instruction, and assessment: A research agenda. *Language Teaching*, *52*(02), 261–274. https://doi.org/10.1017/S0261444819000053
