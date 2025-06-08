@@ -64,7 +64,7 @@ In each of the files, four extra columns were added compared to the original Lex
 - A column called `max_annot_[LEVEL]`, which includes - in the format of a Python dictionary - the highest LCP annotation for the target word per participant (or `N/A` in case the target word has only one occurrence).
 
 ## DOI
-https://doi.org/10.5281/zenodo.13920230
+[https://doi.org/10.5281/zenodo.13920229](https://doi.org/10.5281/zenodo.13920229)
 
 ## References
 - Degraeuwe, J. (2025). You Shall Know a Word's Difficulty by the Family It Keeps: Word Family Features in Personalised Word Difficulty Classifiers for L2 Spanish.
