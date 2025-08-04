@@ -67,7 +67,7 @@ In each of the files, four extra columns were added compared to the original Lex
 [https://doi.org/10.5281/zenodo.13920229](https://doi.org/10.5281/zenodo.13920229)
 
 ## References
-- Degraeuwe, J. (2025). You Shall Know a Word's Difficulty by the Family It Keeps: Word Family Features in Personalised Word Difficulty Classifiers for L2 Spanish.
+- Degraeuwe, J. (2025). You Shall Know a Word’s Difficulty by the Family It Keeps: Word Family Features in Personalised Word Difficulty Classifiers for L2 Spanish. In E. Kochmar, B. Alhafni, M. Bexte, J. Burstein, A. Horbach, R. Laarmann-Quante, … Z. Yuan (Eds.), *Proceedings of the 20th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2025)* (pp. 312–325). Vienna, Austria: Association for Computational Linguistics. https://aclanthology.org/2025.bea-1.24/
 
 - Degraeuwe, J., & Goethals, P. (2024). LexComSpaL2: A Lexical Complexity Corpus for Spanish as a Foreign Language. In N. Calzolari, M.-Y. Kan, V. Hoste, A. Lenci, S. Sakti, & N. Xue (Eds.), *Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)* (pp. 10432–10447). Torino, Italy: ELRA and ICCL. https://aclanthology.org/2024.lrec-main.912/
 
