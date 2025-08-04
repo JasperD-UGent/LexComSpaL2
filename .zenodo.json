@@ -1,0 +1,39 @@
+{
+    "upload_type": "dataset",
+
+    "publication_date": "2024-10-11",
+
+    "creators": [
+        {
+            "orcid": "0000-0003-0850-314X",
+            "affiliation": "Ghent University",
+            "name": "Degraeuwe, Jasper"
+        },
+    ],
+
+    "license": "Open Data Commons Attribution License v1.0",
+
+    "title": "LexComSpaL2: A Lexical Complexity Corpus for Spanish as a Foreign Language",
+
+    "related_identifiers": [
+        {
+            "scheme": "url",
+            "identifier": "https://aclanthology.org/2024.lrec-main.912/",
+            "relation": "isDocumentedBy",
+            "resource_type": "publication-article"
+        },
+        {
+            "scheme": "url",
+            "identifier": "https://aclanthology.org/2025.bea-1.24/",
+            "relation": "isDocumentedBy",
+            "resource_type": "publication-article"
+        }
+    ],
+
+    "keywords": ["lexical complexity prediction", "second language acquisition"],
+
+    "communities": [
+        {"identifier": "ugent"}
+    ]
+
+}
