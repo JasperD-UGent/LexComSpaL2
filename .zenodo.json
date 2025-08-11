@@ -23,14 +23,14 @@
             "resource_type": "publication-article"
         },
         {
-            "scheme": "url",
-            "identifier": "https://aclanthology.org/2025.bea-1.24/",
+            "scheme": "doi",
+            "identifier": "10.18653/v1/2025.bea-1.24",
             "relation": "isDocumentedBy",
             "resource_type": "publication-article"
         }
     ],
 
-    "keywords": ["lexical complexity prediction", "second language acquisition"],
+    "keywords": ["lexical complexity prediction", "second language acquisition", "word families", "BiLSTM classifier", "Spanish"],
 
     "communities": [
         {"identifier": "ugent"}
