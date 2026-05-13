@@ -20,13 +20,13 @@
             "scheme": "url",
             "identifier": "https://aclanthology.org/2024.lrec-main.912/",
             "relation": "isDocumentedBy",
-            "resource_type": "publication-article"
+            "resource_type": "publication-conferencepaper"
         },
         {
             "scheme": "doi",
             "identifier": "10.18653/v1/2025.bea-1.24",
             "relation": "isDocumentedBy",
-            "resource_type": "publication-article"
+            "resource_type": "publication-conferencepaper"
         }
     ],
 
